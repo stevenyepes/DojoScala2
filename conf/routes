@@ -1,0 +1,16 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+#GET     /savePerson  controllers.Application.addPerson
+
+#Para ya si guardar cambiamos el tipo del metodo en routes, quedando así:
+
+POST   /person                 controllers.Application.addPerson
+GET    /person/:name/:age                           controllers.Application.savePerson(name:String,age:Int)
